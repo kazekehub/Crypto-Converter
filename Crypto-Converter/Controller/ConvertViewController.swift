@@ -25,11 +25,11 @@ class ConvertViewController: UIViewController,UITextFieldDelegate {
         if let quotes1 = notification.object as? Quote {
             if isFirstButtonClicked == true {
                 firstQuote = quotes1
-                firstQuoteButton.setImage(UIImage(named: firstQuote!.logourl), for: .normal)
+                firstQuoteButton.setImage(UIImage(named: firstQuote!.logoUrl), for: .normal)
             } else {
                 secondQuote = quotes1
                 print("")
-                secondQuoteButton.setImage(UIImage(named: secondQuote!.logourl), for: .normal)
+                secondQuoteButton.setImage(UIImage(named: secondQuote!.logoUrl), for: .normal)
             }
         } else {
             print("quote didn't selected")

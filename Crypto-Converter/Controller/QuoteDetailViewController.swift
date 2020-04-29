@@ -29,7 +29,7 @@ class QuoteDetailViewController: UIViewController {
         super.viewDidLoad()
         self.title = quote!.name
 
-        quoteImage.image = UIImage(named: quote!.logourl)
+        quoteImage.image = UIImage(named: quote!.logoUrl)
         quoteNameLbl.text = quote!.name
         quoteSymbolLbl.text = quote!.symbol
         quoteRankLbl.text = "\(quote!.rank)"

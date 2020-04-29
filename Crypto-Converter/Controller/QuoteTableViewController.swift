@@ -56,7 +56,7 @@ class QuoteTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "quotesCellId", for: indexPath) as! QuoteTableViewCell
         
         let quote = dataArray[indexPath.row]
-        cell.quoteImage.image = UIImage(named: quote.logourl)
+        cell.quoteImage.image = UIImage(named: quote.logoUrl)
         cell.quoteRankLabel.text = "\(quote.rank)"
         cell.quoteSymbolLabel.text = quote.symbol
         cell.quoteNameLabel.text = quote.name
@@ -65,25 +65,20 @@ class QuoteTableViewController: UITableViewController {
         return cell
     }
     
-     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as? QuoteTableViewCell
+        let indexPath = tableView.indexPath(for: cell!)
+        let quote = dataArray[indexPath!.row]
         
-        
-        if isSelectQuoteMode == true, let cell = sender as? QuoteTableViewCell,
-        let indexPath = tableView.indexPath(for: cell) {
-            let quote = dataArray[indexPath.row]
-//            let cell = sender as? QuoteTableViewCell
-//            let indexPath = tableView.indexPath(for: cell!)
-//            let quote = dataArray[indexPath!.row]
+        if isSelectQuoteMode == true {
             NotificationCenter.default.post(name: NotificationSendSelectedQuote, object: quote)
             self.dismiss(animated: true, completion: nil)
             return
         }
-        if let destination = segue.destination as? QuoteDetailViewController, let cell = sender as? QuoteTableViewCell,
-                let indexPath = tableView.indexPath(for: cell) {
-                        let quote = dataArray[indexPath.row]
-                        destination.quote = quote
-                    }
+        if let destination = segue.destination as? QuoteDetailViewController {
+            destination.quote = quote
         }
+    }
 }
 
 extension QuoteTableViewController: QuoteProviderDelegate {
