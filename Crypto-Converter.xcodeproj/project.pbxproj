@@ -7,23 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7C3BFDB62454799500807049 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3BFDB52454799500807049 /* AboutViewController.swift */; };
+		7CAF2A9C2459BC4700C12FBA /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAF2A9B2459BC4700C12FBA /* Notifications.swift */; };
+		7CCCB9CE2456357A00C99ACA /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCCB9CD2456357A00C99ACA /* NotificationService.swift */; };
 		7CEAC77A244F81CA00F83FF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC779244F81CA00F83FF9 /* AppDelegate.swift */; };
 		7CEAC77C244F81CA00F83FF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC77B244F81CA00F83FF9 /* SceneDelegate.swift */; };
-		7CEAC77E244F81CA00F83FF9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC77D244F81CA00F83FF9 /* ViewController.swift */; };
 		7CEAC781244F81CA00F83FF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CEAC77F244F81CA00F83FF9 /* Main.storyboard */; };
 		7CEAC783244F81CD00F83FF9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7CEAC782244F81CD00F83FF9 /* Assets.xcassets */; };
 		7CEAC786244F81CD00F83FF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CEAC784244F81CD00F83FF9 /* LaunchScreen.storyboard */; };
+		7CEAC791244F829C00F83FF9 /* QuoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC790244F829C00F83FF9 /* QuoteTableViewController.swift */; };
+		7CEAC793244F82B700F83FF9 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC792244F82B700F83FF9 /* Quote.swift */; };
+		7CEAC795244F82DD00F83FF9 /* QuoteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC794244F82DD00F83FF9 /* QuoteProvider.swift */; };
+		7CEAC797244F836600F83FF9 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC796244F836600F83FF9 /* Converter.swift */; };
+		7CEAC799244F83CD00F83FF9 /* QuoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC798244F83CD00F83FF9 /* QuoteDetailViewController.swift */; };
+		7CEAC79B244F840D00F83FF9 /* QuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC79A244F840D00F83FF9 /* QuoteTableViewCell.swift */; };
+		7CEE347A2456597700BE180A /* ConvertDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEE34792456597700BE180A /* ConvertDetailTableViewCell.swift */; };
+		7CF5045224537808005BDCC7 /* ConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF5045124537808005BDCC7 /* ConvertViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7CEAC776244F81CA00F83FF9 /* Crypto-Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto-Converter.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7C3BFDB52454799500807049 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		7CAF2A9B2459BC4700C12FBA /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		7CCCB9CD2456357A00C99ACA /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		7CEAC776244F81CA00F83FF9 /* Crypto-Converter 44.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto-Converter 44.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CEAC779244F81CA00F83FF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CEAC77B244F81CA00F83FF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		7CEAC77D244F81CA00F83FF9 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7CEAC780244F81CA00F83FF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7CEAC782244F81CD00F83FF9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7CEAC785244F81CD00F83FF9 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7CEAC787244F81CD00F83FF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CEAC790244F829C00F83FF9 /* QuoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTableViewController.swift; sourceTree = "<group>"; };
+		7CEAC792244F82B700F83FF9 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
+		7CEAC794244F82DD00F83FF9 /* QuoteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteProvider.swift; sourceTree = "<group>"; };
+		7CEAC796244F836600F83FF9 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		7CEAC798244F83CD00F83FF9 /* QuoteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailViewController.swift; sourceTree = "<group>"; };
+		7CEAC79A244F840D00F83FF9 /* QuoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTableViewCell.swift; sourceTree = "<group>"; };
+		7CEE34792456597700BE180A /* ConvertDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertDetailTableViewCell.swift; sourceTree = "<group>"; };
+		7CF5045124537808005BDCC7 /* ConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +68,7 @@
 		7CEAC777244F81CA00F83FF9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7CEAC776244F81CA00F83FF9 /* Crypto-Converter.app */,
+				7CEAC776244F81CA00F83FF9 /* Crypto-Converter 44.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -56,15 +76,49 @@
 		7CEAC778244F81CA00F83FF9 /* Crypto-Converter */ = {
 			isa = PBXGroup;
 			children = (
+				7CEAC78D244F81DD00F83FF9 /* Controller */,
+				7CEAC78F244F81F700F83FF9 /* View */,
+				7CEAC78E244F81EE00F83FF9 /* Model */,
 				7CEAC779244F81CA00F83FF9 /* AppDelegate.swift */,
 				7CEAC77B244F81CA00F83FF9 /* SceneDelegate.swift */,
-				7CEAC77D244F81CA00F83FF9 /* ViewController.swift */,
-				7CEAC77F244F81CA00F83FF9 /* Main.storyboard */,
 				7CEAC782244F81CD00F83FF9 /* Assets.xcassets */,
-				7CEAC784244F81CD00F83FF9 /* LaunchScreen.storyboard */,
 				7CEAC787244F81CD00F83FF9 /* Info.plist */,
 			);
 			path = "Crypto-Converter";
+			sourceTree = "<group>";
+		};
+		7CEAC78D244F81DD00F83FF9 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				7CEAC790244F829C00F83FF9 /* QuoteTableViewController.swift */,
+				7CEAC798244F83CD00F83FF9 /* QuoteDetailViewController.swift */,
+				7CF5045124537808005BDCC7 /* ConvertViewController.swift */,
+				7C3BFDB52454799500807049 /* AboutViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		7CEAC78E244F81EE00F83FF9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				7CEAC796244F836600F83FF9 /* Converter.swift */,
+				7CEAC792244F82B700F83FF9 /* Quote.swift */,
+				7CCCB9CD2456357A00C99ACA /* NotificationService.swift */,
+				7CAF2A9B2459BC4700C12FBA /* Notifications.swift */,
+				7CEAC794244F82DD00F83FF9 /* QuoteProvider.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		7CEAC78F244F81F700F83FF9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				7CEAC77F244F81CA00F83FF9 /* Main.storyboard */,
+				7CEAC784244F81CD00F83FF9 /* LaunchScreen.storyboard */,
+				7CEAC79A244F840D00F83FF9 /* QuoteTableViewCell.swift */,
+				7CEE34792456597700BE180A /* ConvertDetailTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,7 +138,7 @@
 			);
 			name = "Crypto-Converter";
 			productName = "Crypto-Converter";
-			productReference = 7CEAC776244F81CA00F83FF9 /* Crypto-Converter.app */;
+			productReference = 7CEAC776244F81CA00F83FF9 /* Crypto-Converter 44.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -138,8 +192,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7CEAC77E244F81CA00F83FF9 /* ViewController.swift in Sources */,
 				7CEAC77A244F81CA00F83FF9 /* AppDelegate.swift in Sources */,
+				7CEAC799244F83CD00F83FF9 /* QuoteDetailViewController.swift in Sources */,
+				7C3BFDB62454799500807049 /* AboutViewController.swift in Sources */,
+				7CF5045224537808005BDCC7 /* ConvertViewController.swift in Sources */,
+				7CEAC791244F829C00F83FF9 /* QuoteTableViewController.swift in Sources */,
+				7CEE347A2456597700BE180A /* ConvertDetailTableViewCell.swift in Sources */,
+				7CEAC797244F836600F83FF9 /* Converter.swift in Sources */,
+				7CAF2A9C2459BC4700C12FBA /* Notifications.swift in Sources */,
+				7CEAC79B244F840D00F83FF9 /* QuoteTableViewCell.swift in Sources */,
+				7CEAC795244F82DD00F83FF9 /* QuoteProvider.swift in Sources */,
+				7CCCB9CE2456357A00C99ACA /* NotificationService.swift in Sources */,
+				7CEAC793244F82B700F83FF9 /* Quote.swift in Sources */,
 				7CEAC77C244F81CA00F83FF9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -287,12 +351,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5K554A9BGV;
 				INFOPLIST_FILE = "Crypto-Converter/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "Zhapparkulov.Crypto-Converter";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Crypto-Converter 44";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -305,12 +371,14 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 5K554A9BGV;
 				INFOPLIST_FILE = "Crypto-Converter/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.6;
 				PRODUCT_BUNDLE_IDENTIFIER = "Zhapparkulov.Crypto-Converter";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Crypto-Converter 44";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
