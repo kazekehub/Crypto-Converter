@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -18,11 +18,9 @@
 		7CEAC786244F81CD00F83FF9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CEAC784244F81CD00F83FF9 /* LaunchScreen.storyboard */; };
 		7CEAC791244F829C00F83FF9 /* QuoteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC790244F829C00F83FF9 /* QuoteTableViewController.swift */; };
 		7CEAC793244F82B700F83FF9 /* Quote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC792244F82B700F83FF9 /* Quote.swift */; };
-		7CEAC795244F82DD00F83FF9 /* QuoteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC794244F82DD00F83FF9 /* QuoteProvider.swift */; };
 		7CEAC797244F836600F83FF9 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC796244F836600F83FF9 /* Converter.swift */; };
 		7CEAC799244F83CD00F83FF9 /* QuoteDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC798244F83CD00F83FF9 /* QuoteDetailViewController.swift */; };
 		7CEAC79B244F840D00F83FF9 /* QuoteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC79A244F840D00F83FF9 /* QuoteTableViewCell.swift */; };
-		7CEE347A2456597700BE180A /* ConvertDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEE34792456597700BE180A /* ConvertDetailTableViewCell.swift */; };
 		7CF5045224537808005BDCC7 /* ConvertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CF5045124537808005BDCC7 /* ConvertViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -31,6 +29,10 @@
 		3A5FF18F0442A1EF8A61FAB0 /* Pods-Crypto-Converter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto-Converter.release.xcconfig"; path = "Target Support Files/Pods-Crypto-Converter/Pods-Crypto-Converter.release.xcconfig"; sourceTree = "<group>"; };
 		7C3BFDB52454799500807049 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		7CAF2A9B2459BC4700C12FBA /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		7CAF2A9E245A40ED00C12FBA /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CAF2AA2245A410900C12FBA /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CAF2AA6245A464300C12FBA /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CAF2AAA245A464900C12FBA /* SVGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SVGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CCCB9CD2456357A00C99ACA /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		7CEAC776244F81CA00F83FF9 /* Crypto-Converter 44.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto-Converter 44.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CEAC779244F81CA00F83FF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,11 +43,9 @@
 		7CEAC787244F81CD00F83FF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CEAC790244F829C00F83FF9 /* QuoteTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTableViewController.swift; sourceTree = "<group>"; };
 		7CEAC792244F82B700F83FF9 /* Quote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quote.swift; sourceTree = "<group>"; };
-		7CEAC794244F82DD00F83FF9 /* QuoteProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteProvider.swift; sourceTree = "<group>"; };
 		7CEAC796244F836600F83FF9 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		7CEAC798244F83CD00F83FF9 /* QuoteDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteDetailViewController.swift; sourceTree = "<group>"; };
 		7CEAC79A244F840D00F83FF9 /* QuoteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteTableViewCell.swift; sourceTree = "<group>"; };
-		7CEE34792456597700BE180A /* ConvertDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertDetailTableViewCell.swift; sourceTree = "<group>"; };
 		7CF5045124537808005BDCC7 /* ConvertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertViewController.swift; sourceTree = "<group>"; };
 		CF2BB7F05C8A626C4E2D2968 /* Pods-Crypto-Converter.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto-Converter.debug.xcconfig"; path = "Target Support Files/Pods-Crypto-Converter/Pods-Crypto-Converter.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -112,7 +112,6 @@
 				7CEAC792244F82B700F83FF9 /* Quote.swift */,
 				7CCCB9CD2456357A00C99ACA /* NotificationService.swift */,
 				7CAF2A9B2459BC4700C12FBA /* Notifications.swift */,
-				7CEAC794244F82DD00F83FF9 /* QuoteProvider.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -123,7 +122,6 @@
 				7CEAC77F244F81CA00F83FF9 /* Main.storyboard */,
 				7CEAC784244F81CD00F83FF9 /* LaunchScreen.storyboard */,
 				7CEAC79A244F840D00F83FF9 /* QuoteTableViewCell.swift */,
-				7CEE34792456597700BE180A /* ConvertDetailTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -134,13 +132,16 @@
 				CF2BB7F05C8A626C4E2D2968 /* Pods-Crypto-Converter.debug.xcconfig */,
 				3A5FF18F0442A1EF8A61FAB0 /* Pods-Crypto-Converter.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		C95E68F7645C31E8076C4102 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				7CAF2AAA245A464900C12FBA /* SVGKit.framework */,
+				7CAF2AA6245A464300C12FBA /* SwiftSVG.framework */,
+				7CAF2AA2245A410900C12FBA /* SwiftSVG.framework */,
+				7CAF2A9E245A40ED00C12FBA /* SwiftSVG.framework */,
 				25256BF93EAC76174113C7B5 /* Pods_Crypto_Converter.framework */,
 			);
 			name = Frameworks;
@@ -157,7 +158,7 @@
 				7CEAC772244F81CA00F83FF9 /* Sources */,
 				7CEAC773244F81CA00F83FF9 /* Frameworks */,
 				7CEAC774244F81CA00F83FF9 /* Resources */,
-				E62058E53968018B82E505C1 /* [CP] Embed Pods Frameworks */,
+				E47B6E295450859E97E563EE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -237,7 +238,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E62058E53968018B82E505C1 /* [CP] Embed Pods Frameworks */ = {
+		E47B6E295450859E97E563EE /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -266,11 +267,9 @@
 				7C3BFDB62454799500807049 /* AboutViewController.swift in Sources */,
 				7CF5045224537808005BDCC7 /* ConvertViewController.swift in Sources */,
 				7CEAC791244F829C00F83FF9 /* QuoteTableViewController.swift in Sources */,
-				7CEE347A2456597700BE180A /* ConvertDetailTableViewCell.swift in Sources */,
 				7CEAC797244F836600F83FF9 /* Converter.swift in Sources */,
 				7CAF2A9C2459BC4700C12FBA /* Notifications.swift in Sources */,
 				7CEAC79B244F840D00F83FF9 /* QuoteTableViewCell.swift in Sources */,
-				7CEAC795244F82DD00F83FF9 /* QuoteProvider.swift in Sources */,
 				7CCCB9CE2456357A00C99ACA /* NotificationService.swift in Sources */,
 				7CEAC793244F82B700F83FF9 /* Quote.swift in Sources */,
 				7CEAC77C244F81CA00F83FF9 /* SceneDelegate.swift in Sources */,

@@ -4,9 +4,10 @@
 //
 //  Created by Beka Zhapparkulov on 4/25/20.
 //  Copyright © 2020 Kazybek. All rights reserved.
-//
 
 import UIKit
+import SVGKit
+import SDWebImage
 
 class ConvertViewController: UIViewController,UITextFieldDelegate {
     
@@ -22,14 +23,13 @@ class ConvertViewController: UIViewController,UITextFieldDelegate {
                                                object: nil)
     }
     @objc func selectQuoteNotification(notification: Notification){
-        if let quotes1 = notification.object as? Quote {
+        if let quote = notification.object as? Quote {
             if isFirstButtonClicked == true {
-                firstQuote = quotes1
-                firstQuoteButton.setImage(UIImage(named: firstQuote!.logoUrl), for: .normal)
+                firstQuote = quote
+                _ = setButtonImage(button: firstQuoteButton, quote: firstQuote!)
             } else {
-                secondQuote = quotes1
-                print("")
-                secondQuoteButton.setImage(UIImage(named: secondQuote!.logoUrl), for: .normal)
+                secondQuote = quote
+                _ = setButtonImage(button: secondQuoteButton, quote: secondQuote!)
             }
         } else {
             print("quote didn't selected")
@@ -46,22 +46,41 @@ class ConvertViewController: UIViewController,UITextFieldDelegate {
         firstInputTxtFld.delegate = self
         secondInputTxtFld.delegate = self
     }
+    
+    func setButtonImage(button: UIButton, quote: Quote) -> UIButton {
+        let imageURL = URL(string: (quote.logoUrl!))
+        if let data = try? Data(contentsOf: imageURL!), let receivedimage: SVGKImage = SVGKImage(data: data) {
+            button.setImage(receivedimage.uiImage, for: .normal)
+               } else {
+            button.sd_setImage(with: imageURL, for: .normal, placeholderImage:nil)
+               }
+        return button
+    }
 
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let firstQuote = firstQuote,
             let secondQuote = secondQuote else { return
         }
+        var count: Double? {
+            return Double(firstInputTxtFld.text!)
+        }
+        var firstPrice: Double? {
+            return Double(firstQuote.price!)
+        }
+        var secondPrice: Double?{
+            return Double(secondQuote.price!)
+        }
         if firstInputTxtFld.isEditing == true, firstInputTxtFld.text != "" {
-            let baseQuote = Converter(baseQuote: firstQuote.price)
-            var count: Double? {
-                return Double(firstInputTxtFld.text!)
-            }
-            secondInputTxtFld.text = baseQuote.converter(count: count!, convertQuote: secondQuote.price)
-        } else {
+            let baseQuote = Converter(baseQuote: firstPrice!)
+            secondInputTxtFld.text = baseQuote.converter(count: count!, convertQuote: secondPrice!)
+        } else if secondInputTxtFld.isEditing == true, secondInputTxtFld.text != "" { //reverce convertations
+            let baseQuote = Converter(baseQuote: secondPrice!)
+            firstInputTxtFld.text = baseQuote.converter(count: count!, convertQuote: firstPrice!)
+            } else {
             secondInputTxtFld.text = ""
             }
         }
-            
+    
     @IBAction func hideKeyBoard(_ sender: Any) {
         firstInputTxtFld.resignFirstResponder()
         secondInputTxtFld.resignFirstResponder()

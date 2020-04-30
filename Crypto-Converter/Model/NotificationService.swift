@@ -10,7 +10,7 @@ import Foundation
 
  class NotificationService {
     var timer: Timer?
-    lazy var quoteProvider = QuoteProvider(delegate: self)
+//    lazy var quoteProvider = QuoteProvider(delegate: self)
     
     func start() {
         timer = Timer.scheduledTimer(withTimeInterval: 60,
@@ -21,7 +21,7 @@ import Foundation
     }
     
     func sendMessage() {
-        quoteProvider.requestQuotes()
+//        quoteProvider.requestQuotes()
     }
         
     func stop(){
@@ -31,8 +31,8 @@ import Foundation
     }
 }
 
-extension NotificationService: QuoteProviderDelegate {
-    func provideQuotes(quotes: [Quote]) {
-        NotificationCenter.default.post(name: NotificationSendQuoteList, object: quotes)
-    }
-}
+//extension NotificationService: QuoteProviderDelegate {
+//    func provideQuotes(quotes: [Quote]) {
+//        NotificationCenter.default.post(name: NotificationSendQuoteList, object: quotes)
+//    }
+//}
