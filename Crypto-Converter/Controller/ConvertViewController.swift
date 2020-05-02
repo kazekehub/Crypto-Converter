@@ -49,7 +49,7 @@ class ConvertViewController: UIViewController,UITextFieldDelegate {
     
     func setButtonImage(button: UIButton, quote: Quote) -> UIButton {
         let imageURL = URL(string: quote.logoUrl!)
-        button.sd_setImage(with:imageURL, for: .normal, placeholderImage:nil)
+        button.sd_setImage(with:imageURL, for: .normal, placeholderImage: UIImage(named: "placeholder"))
    
         return button
     }
@@ -67,8 +67,8 @@ class ConvertViewController: UIViewController,UITextFieldDelegate {
             return Double(secondQuote.price!)
         }
         if firstInputTxtFld.isEditing == true, firstInputTxtFld.text != "" {
-            let baseQuote = Converter(baseQuote: firstPrice!)
-            secondInputTxtFld.text = baseQuote.converter(count: count!, convertQuote: secondPrice!)
+            let baseQuote = Converter(baseQuote: secondPrice!)
+            secondInputTxtFld.text = baseQuote.converter(count: count!, convertQuote: firstPrice!)
             } else {
             secondInputTxtFld.text = ""
             }

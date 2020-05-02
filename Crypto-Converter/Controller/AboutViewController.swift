@@ -28,7 +28,7 @@ class AboutViewController: UIViewController,  MFMailComposeViewControllerDelegat
     }
     
     @IBAction func goToLinkedinButton(_ sender: Any) {
-        guard let url = URL(string: "https://www.linkedin.com/in/kazybek-zhapparkulov-a597971a7/") else { return }
+        guard let url = URL(string: "https://www.linkedin.com/in/kazybek-zhapparkulov/") else { return }
         UIApplication.shared.open(url)
     }
   

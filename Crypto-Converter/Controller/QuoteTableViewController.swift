@@ -12,7 +12,6 @@ import SDWebImageSVGCoder
 import JGProgressHUD
 import TableViewReloadAnimation
 
-
 class QuoteTableViewController: UITableViewController {
     
     var isSelectQuoteMode = false
@@ -37,7 +36,6 @@ class QuoteTableViewController: UITableViewController {
         constantDelay: 0))
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadJSON()
@@ -50,25 +48,24 @@ class QuoteTableViewController: UITableViewController {
         hud.show(in: self.view)
 
         if let url = URL(string: quoteApi) {
-            let quoteLoadTask =
-                URLSession.shared.dataTask(with: url) {
-                    [weak self]
-                    (data, response, error)
-                    in
-                    guard let self = self else {
-                        return
-                    }
-                    if let data = data {
-                        do {
-                            self.quoteData = try JSONDecoder().decode([Quote].self, from: data)
-                            DispatchQueue.main.async {
-                                hud.dismiss()
-                                self.tableView.reloadData()
-                            }
-                        } catch {
-                            print("Decoding JSON failure")
+            let quoteLoadTask = URLSession.shared.dataTask(with: url) {
+                [weak self]
+                (data, response, error)
+                in
+                guard let self = self else {
+                    return
+                }
+                if let data = data {
+                    do {
+                        self.quoteData = try JSONDecoder().decode([Quote].self, from: data)
+                        DispatchQueue.main.async {
+                            hud.dismiss()
+                            self.tableView.reloadData()
                         }
+                    } catch {
+                        print("Decoding JSON failure")
                     }
+                }
             }
             quoteLoadTask.resume()
         }
@@ -89,9 +86,13 @@ class QuoteTableViewController: UITableViewController {
         
         
         let quote = quoteData[indexPath.row]
-        
         let imageURL = URL(string: quote.logoUrl!)
-        cell.quoteImage.sd_setImage(with:imageURL, placeholderImage:nil)
+        switch indexPath.row {
+        case 54...58,92...95,242...247:
+            cell.quoteImage.image = (UIImage(named: "placeholder"))
+        default:
+            cell.quoteImage.sd_setImage(with:imageURL, placeholderImage: UIImage(named: "placeholder"))
+        }
         cell.quotePriceChangeLabel.text = quote.oneDay?.priceChangePct
             if quote.oneDay?.priceChangePct?.contains("-") == true {
                 cell.quotePriceChangeLabel.textColor = .red
@@ -121,5 +122,3 @@ class QuoteTableViewController: UITableViewController {
         }
     }
 }
-
-

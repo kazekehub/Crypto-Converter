@@ -11,7 +11,7 @@ import Foundation
  class NotificationService {
     var timer: Timer?
     func start() {
-        timer = Timer.scheduledTimer(withTimeInterval: 60,
+        timer = Timer.scheduledTimer(withTimeInterval: 5.0,
                                      repeats: true,
                                      block: { [weak self]_ in self?.sendMessage()
         })
