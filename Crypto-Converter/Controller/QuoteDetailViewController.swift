@@ -7,8 +7,8 @@
 //
 
 import UIKit
-import SVGKit
 import SDWebImage
+import SDWebImageSVGCoder
 
 class QuoteDetailViewController: UIViewController {
     
@@ -30,13 +30,10 @@ class QuoteDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = quote!.name
-            
-        if let svg = URL(string: (quote?.logoUrl!)!), let data = try? Data(contentsOf: svg), let receivedimage: SVGKImage = SVGKImage(data: data) {
-            quoteImage.image = receivedimage.uiImage
-        } else {
-            quoteImage?.sd_setImage(with: URL(string:(quote?.logoUrl!)!), placeholderImage:nil)
-        }
-        
+         
+        let imageURL = URL(string: (quote?.logoUrl!)!)
+           quoteImage?.sd_setImage(with: imageURL, placeholderImage:nil)
+
         quoteNameLbl.text = quote!.name
         quoteSymbolLbl.text = quote!.symbol
         quoteRankLbl.text = quote!.rank

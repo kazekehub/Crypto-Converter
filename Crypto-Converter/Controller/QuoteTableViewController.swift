@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SVGKit
 import SDWebImage
 import SDWebImageSVGCoder
 import JGProgressHUD
@@ -93,19 +92,12 @@ class QuoteTableViewController: UITableViewController {
         
         let imageURL = URL(string: quote.logoUrl!)
         cell.quoteImage.sd_setImage(with:imageURL, placeholderImage:nil)
-
-//        if let svg = URL(string: quote.logoUrl!), let data = try? Data(contentsOf: svg), let receivedimage: SVGKImage = SVGKImage(data: data) {
-//            cell.quoteImage.image = receivedimage.uiImage
-//        } else {
-//            cell.quoteImage?.sd_setImage(with: URL(string:quote.logoUrl!), placeholderImage:nil)
-//        }
         cell.quotePriceChangeLabel.text = quote.oneDay?.priceChangePct
             if quote.oneDay?.priceChangePct?.contains("-") == true {
                 cell.quotePriceChangeLabel.textColor = .red
             } else {
                 cell.quotePriceChangeLabel.textColor = .systemGreen
             }
- 
         cell.quoteRankLabel.text = quote.rank
         cell.quoteSymbolLabel.text = quote.symbol
         cell.quoteNameLabel.text = quote.name

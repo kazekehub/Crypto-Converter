@@ -6,8 +6,8 @@
 //  Copyright © 2020 Kazybek. All rights reserved.
 
 import UIKit
-import SVGKit
 import SDWebImage
+import SDWebImageSVGCoder
 
 class ConvertViewController: UIViewController,UITextFieldDelegate {
     
@@ -48,12 +48,9 @@ class ConvertViewController: UIViewController,UITextFieldDelegate {
     }
     
     func setButtonImage(button: UIButton, quote: Quote) -> UIButton {
-        let imageURL = URL(string: (quote.logoUrl!))
-        if let data = try? Data(contentsOf: imageURL!), let receivedimage: SVGKImage = SVGKImage(data: data) {
-            button.setImage(receivedimage.uiImage, for: .normal)
-               } else {
-            button.sd_setImage(with: imageURL, for: .normal, placeholderImage:nil)
-               }
+        let imageURL = URL(string: quote.logoUrl!)
+        button.sd_setImage(with:imageURL, for: .normal, placeholderImage:nil)
+   
         return button
     }
 
