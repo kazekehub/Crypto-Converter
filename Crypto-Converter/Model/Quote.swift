@@ -23,6 +23,7 @@ struct Quote: Decodable {
     var maxSupply: String?
     var high: String?
     var highTimestamp: String?
+    var oneDay: QuoteChanges?
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -39,6 +40,27 @@ struct Quote: Decodable {
         case maxSupply = "max_supply"
         case high
         case highTimestamp = "high_timestamp"
+        case oneDay = "1d"
       }
     
+}
+
+struct QuoteChanges: Decodable {
+    var priceChange: String?
+    var priceChangePct: String?
+    var volume: String?
+    var volumeChange: String?
+    var volumeChangePct: String?
+    var marketCapChange: String?
+    var marketCapChangePct: String?
+    
+    enum CodingKeys: String, CodingKey {
+        case priceChange = "price_change"
+        case priceChangePct = "price_change_pct"
+        case volume
+        case volumeChange = "volume_change"
+        case volumeChangePct = "volume_change_pct"
+        case marketCapChange = "market_cap_change"
+        case marketCapChangePct = "market_cap_change_pct"
+    }
 }

@@ -9,18 +9,17 @@
 import UIKit
 import SVGKit
 import SDWebImage
+import SDWebImageSVGCoder
+import JGProgressHUD
+import TableViewReloadAnimation
 
-//protocol QuoteProviderProtocol {
-//    var delegate: QuoteProviderDelegate? {get set}
-//    func requestQuotes()
-//}
 
 class QuoteTableViewController: UITableViewController {
     
     var isSelectQuoteMode = false
-//    var provider: QuoteProviderProtocol?
     var quoteData: [Quote] = []
-    var quoteApi = "https://api.nomics.com/v1/currencies/ticker?key=3c8c0907276523d0ff0e94c50657de0c&format=json&interval=5m&convert=USD"
+
+    let quoteApi = "https://api.nomics.com/v1/currencies/ticker?key=3c8c0907276523d0ff0e94c50657de0c&format=json&convert=USD"
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -30,16 +29,15 @@ class QuoteTableViewController: UITableViewController {
                                                object: nil)
     }
     @objc func reseiveQuoteNotification(notification: Notification){
-        if let quotes = notification.object as? [Quote] {
-//            provideQuotes(quotes: quotes)
-        }
+        _ = notification.object as? [Quote]
     }
     
     @IBAction func quoteUpdateClick(_ sender: Any) {
         loadJSON()
-//        provider = QuoteProvider(delegate: self)
-//        provider?.requestQuotes()
+        tableView.reloadData(with: .simple(duration: 0.75, direction: .rotation3D(type: .spiderMan),
+        constantDelay: 0))
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +46,10 @@ class QuoteTableViewController: UITableViewController {
     }
     
     func loadJSON() {
+        let hud = JGProgressHUD(style: .dark)
+        hud.textLabel.text = "Loading"
+        hud.show(in: self.view)
+
         if let url = URL(string: quoteApi) {
             let quoteLoadTask =
                 URLSession.shared.dataTask(with: url) {
@@ -61,6 +63,7 @@ class QuoteTableViewController: UITableViewController {
                         do {
                             self.quoteData = try JSONDecoder().decode([Quote].self, from: data)
                             DispatchQueue.main.async {
+                                hud.dismiss()
                                 self.tableView.reloadData()
                             }
                         } catch {
@@ -71,7 +74,7 @@ class QuoteTableViewController: UITableViewController {
             quoteLoadTask.resume()
         }
     }
-    
+
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
@@ -79,18 +82,30 @@ class QuoteTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return quoteData.count
     }
-    
+     
+    func loadPage(_ page: Int) {
+    }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "quotesCellId", for: indexPath) as! QuoteTableViewCell
         
+        
         let quote = quoteData[indexPath.row]
         
-        if let svg = URL(string: quote.logoUrl!), let data = try? Data(contentsOf: svg), let receivedimage: SVGKImage = SVGKImage(data: data) {
-            cell.quoteImage.image = receivedimage.uiImage
-        } else {
-            cell.quoteImage?.sd_setImage(with: URL(string:quote.logoUrl!), placeholderImage:nil)
-        }
+        let imageURL = URL(string: quote.logoUrl!)
+        cell.quoteImage.sd_setImage(with:imageURL, placeholderImage:nil)
 
+//        if let svg = URL(string: quote.logoUrl!), let data = try? Data(contentsOf: svg), let receivedimage: SVGKImage = SVGKImage(data: data) {
+//            cell.quoteImage.image = receivedimage.uiImage
+//        } else {
+//            cell.quoteImage?.sd_setImage(with: URL(string:quote.logoUrl!), placeholderImage:nil)
+//        }
+        cell.quotePriceChangeLabel.text = quote.oneDay?.priceChangePct
+            if quote.oneDay?.priceChangePct?.contains("-") == true {
+                cell.quotePriceChangeLabel.textColor = .red
+            } else {
+                cell.quotePriceChangeLabel.textColor = .systemGreen
+            }
+ 
         cell.quoteRankLabel.text = quote.rank
         cell.quoteSymbolLabel.text = quote.symbol
         cell.quoteNameLabel.text = quote.name
@@ -98,7 +113,7 @@ class QuoteTableViewController: UITableViewController {
 
         return cell
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let cell = sender as? QuoteTableViewCell
         let indexPath = tableView.indexPath(for: cell!)
@@ -115,9 +130,4 @@ class QuoteTableViewController: UITableViewController {
     }
 }
 
-//extension QuoteTableViewController: QuoteProviderDelegate {
-//    func provideQuotes(quotes: [Quote]) {
-//        quoteData = quotes
-//        tableView.reloadData()
-//    }
-//}
+

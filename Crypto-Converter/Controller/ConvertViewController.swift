@@ -59,8 +59,7 @@ class ConvertViewController: UIViewController,UITextFieldDelegate {
 
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let firstQuote = firstQuote,
-            let secondQuote = secondQuote else { return
-        }
+            let secondQuote = secondQuote else { return }
         var count: Double? {
             return Double(firstInputTxtFld.text!)
         }
@@ -73,9 +72,6 @@ class ConvertViewController: UIViewController,UITextFieldDelegate {
         if firstInputTxtFld.isEditing == true, firstInputTxtFld.text != "" {
             let baseQuote = Converter(baseQuote: firstPrice!)
             secondInputTxtFld.text = baseQuote.converter(count: count!, convertQuote: secondPrice!)
-        } else if secondInputTxtFld.isEditing == true, secondInputTxtFld.text != "" { //reverce convertations
-            let baseQuote = Converter(baseQuote: secondPrice!)
-            firstInputTxtFld.text = baseQuote.converter(count: count!, convertQuote: firstPrice!)
             } else {
             secondInputTxtFld.text = ""
             }

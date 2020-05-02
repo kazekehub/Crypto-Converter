@@ -14,4 +14,5 @@ class QuoteTableViewCell: UITableViewCell {
     @IBOutlet weak var quoteNameLabel: UILabel!
     @IBOutlet weak var quoteSymbolLabel: UILabel!
     @IBOutlet weak var quotePriceLabel: UILabel!
+    @IBOutlet weak var quotePriceChangeLabel: UILabel!
 }

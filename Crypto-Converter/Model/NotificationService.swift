@@ -10,18 +10,15 @@ import Foundation
 
  class NotificationService {
     var timer: Timer?
-//    lazy var quoteProvider = QuoteProvider(delegate: self)
-    
     func start() {
         timer = Timer.scheduledTimer(withTimeInterval: 60,
                                      repeats: true,
                                      block: { [weak self]_ in self?.sendMessage()
-                                        
         })
     }
     
     func sendMessage() {
-//        quoteProvider.requestQuotes()
+        
     }
         
     func stop(){
@@ -31,8 +28,3 @@ import Foundation
     }
 }
 
-//extension NotificationService: QuoteProviderDelegate {
-//    func provideQuotes(quotes: [Quote]) {
-//        NotificationCenter.default.post(name: NotificationSendQuoteList, object: quotes)
-//    }
-//}

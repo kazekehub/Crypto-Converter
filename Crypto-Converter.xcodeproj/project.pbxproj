@@ -3,14 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		52883DBEEF2BFBB81A4ADC37 /* Pods_Crypto_Converter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25256BF93EAC76174113C7B5 /* Pods_Crypto_Converter.framework */; };
 		7C3BFDB62454799500807049 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3BFDB52454799500807049 /* AboutViewController.swift */; };
-		7CAF2A9C2459BC4700C12FBA /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CAF2A9B2459BC4700C12FBA /* Notifications.swift */; };
-		7CCCB9CE2456357A00C99ACA /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CCCB9CD2456357A00C99ACA /* NotificationService.swift */; };
+		7C710649245AB56200E94650 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C710648245AB56200E94650 /* Notifications.swift */; };
+		7C71064B245AB56900E94650 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71064A245AB56900E94650 /* NotificationService.swift */; };
+		7C710651245DB99200E94650 /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 7C710650245DB99200E94650 /* SDWebImageSVGCoder */; };
+		7C710654245DCB8B00E94650 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 7C710653245DCB8B00E94650 /* JGProgressHUD */; };
 		7CEAC77A244F81CA00F83FF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC779244F81CA00F83FF9 /* AppDelegate.swift */; };
 		7CEAC77C244F81CA00F83FF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC77B244F81CA00F83FF9 /* SceneDelegate.swift */; };
 		7CEAC781244F81CA00F83FF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CEAC77F244F81CA00F83FF9 /* Main.storyboard */; };
@@ -28,12 +30,12 @@
 		25256BF93EAC76174113C7B5 /* Pods_Crypto_Converter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_Converter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A5FF18F0442A1EF8A61FAB0 /* Pods-Crypto-Converter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto-Converter.release.xcconfig"; path = "Target Support Files/Pods-Crypto-Converter/Pods-Crypto-Converter.release.xcconfig"; sourceTree = "<group>"; };
 		7C3BFDB52454799500807049 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
-		7CAF2A9B2459BC4700C12FBA /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		7C710648245AB56200E94650 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
+		7C71064A245AB56900E94650 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		7CAF2A9E245A40ED00C12FBA /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CAF2AA2245A410900C12FBA /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CAF2AA6245A464300C12FBA /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CAF2AAA245A464900C12FBA /* SVGKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SVGKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7CCCB9CD2456357A00C99ACA /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		7CEAC776244F81CA00F83FF9 /* Crypto-Converter 44.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto-Converter 44.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CEAC779244F81CA00F83FF9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7CEAC77B244F81CA00F83FF9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +58,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				52883DBEEF2BFBB81A4ADC37 /* Pods_Crypto_Converter.framework in Frameworks */,
+				7C710654245DCB8B00E94650 /* JGProgressHUD in Frameworks */,
+				7C710651245DB99200E94650 /* SDWebImageSVGCoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -110,8 +114,8 @@
 			children = (
 				7CEAC796244F836600F83FF9 /* Converter.swift */,
 				7CEAC792244F82B700F83FF9 /* Quote.swift */,
-				7CCCB9CD2456357A00C99ACA /* NotificationService.swift */,
-				7CAF2A9B2459BC4700C12FBA /* Notifications.swift */,
+				7C710648245AB56200E94650 /* Notifications.swift */,
+				7C71064A245AB56900E94650 /* NotificationService.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -165,6 +169,10 @@
 			dependencies = (
 			);
 			name = "Crypto-Converter";
+			packageProductDependencies = (
+				7C710650245DB99200E94650 /* SDWebImageSVGCoder */,
+				7C710653245DCB8B00E94650 /* JGProgressHUD */,
+			);
 			productName = "Crypto-Converter";
 			productReference = 7CEAC776244F81CA00F83FF9 /* Crypto-Converter 44.app */;
 			productType = "com.apple.product-type.application";
@@ -193,6 +201,10 @@
 				Base,
 			);
 			mainGroup = 7CEAC76D244F81CA00F83FF9;
+			packageReferences = (
+				7C71064F245DB99200E94650 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */,
+				7C710652245DCB8B00E94650 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+			);
 			productRefGroup = 7CEAC777244F81CA00F83FF9 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -262,15 +274,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C710649245AB56200E94650 /* Notifications.swift in Sources */,
+				7C71064B245AB56900E94650 /* NotificationService.swift in Sources */,
 				7CEAC77A244F81CA00F83FF9 /* AppDelegate.swift in Sources */,
 				7CEAC799244F83CD00F83FF9 /* QuoteDetailViewController.swift in Sources */,
 				7C3BFDB62454799500807049 /* AboutViewController.swift in Sources */,
 				7CF5045224537808005BDCC7 /* ConvertViewController.swift in Sources */,
 				7CEAC791244F829C00F83FF9 /* QuoteTableViewController.swift in Sources */,
 				7CEAC797244F836600F83FF9 /* Converter.swift in Sources */,
-				7CAF2A9C2459BC4700C12FBA /* Notifications.swift in Sources */,
 				7CEAC79B244F840D00F83FF9 /* QuoteTableViewCell.swift in Sources */,
-				7CCCB9CE2456357A00C99ACA /* NotificationService.swift in Sources */,
 				7CEAC793244F82B700F83FF9 /* Quote.swift in Sources */,
 				7CEAC77C244F81CA00F83FF9 /* SceneDelegate.swift in Sources */,
 			);
@@ -476,6 +488,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7C71064F245DB99200E94650 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSVGCoder.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
+		7C710652245DCB8B00E94650 /* XCRemoteSwiftPackageReference "JGProgressHUD" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/JonasGessner/JGProgressHUD";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7C710650245DB99200E94650 /* SDWebImageSVGCoder */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C71064F245DB99200E94650 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */;
+			productName = SDWebImageSVGCoder;
+		};
+		7C710653245DCB8B00E94650 /* JGProgressHUD */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C710652245DCB8B00E94650 /* XCRemoteSwiftPackageReference "JGProgressHUD" */;
+			productName = JGProgressHUD;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7CEAC76E244F81CA00F83FF9 /* Project object */;
 }
