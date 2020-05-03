@@ -8,40 +8,34 @@
 
 import Foundation
 
- class NotificationService {
+class NotificationService: QuoteProviderDelegate {
+    func provideQuotes(quotes: [Quote]) {
+        self.quotes = quotes
+    }
+    
     var timer: Timer?
     var provider: QuoteProviderProtocol?
+    var quotes: [Quote] = []
     
+    init() {
+        provider = QuoteProvider(delegate: self)
+    }
     func start() {
         timer = Timer.scheduledTimer(withTimeInterval: 5.0,
                                      repeats: true,
                                      block: { [weak self]_ in self?.sendMessage()
         })
     }
-    
     func sendMessage() {
         provider?.requestQuotes()
-//         NotificationCenter.default.post(name: NotificationSendQuoteList, object: Any?)
+        provideQuotes(quotes: quotes)
+        if !quotes.isEmpty{
+            NotificationCenter.default.post(name: NotificationSendQuoteList, object: quotes)
+        }
     }
-
     func stop() {
         timer?.invalidate()
         timer = nil
 
     }
 }
-
-
-
-//  var timer: Timer?
-//
-//    func sendNotification(){
-//        NotificationCenter.default.post(name: NotificationSendQuoteList, object: quoteData)
-//    }
-
-//    func restartTimer() {
-//        sendNotification()
-//        timer?.invalidate()
-//        timer = Timer.scheduledTimer(withTimeInterval: intervalTime, repeats: true) { timer in self.loadJSON() }
-//    }
-

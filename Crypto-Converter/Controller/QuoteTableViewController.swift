@@ -23,21 +23,21 @@ class QuoteTableViewController: UITableViewController {
     var quoteData: [Quote] = []
     var provider: QuoteProviderProtocol?
 
-//    required init?(coder: NSCoder) {
-//        super.init(coder: coder)
-//        NotificationCenter.default.addObserver(self,
-//                                               selector: #selector(reseiveQuoteNotification),
-//                                               name: NotificationSendQuoteList,
-//                                               object: nil)
-//    }
-//    @objc func reseiveQuoteNotification(notification: Notification) {
-//        if let quotes1 = notification.object as? [Quote]{
-////            quoteProvider?.restartTimer()
-//        }
-//    }
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
+        NotificationCenter.default.addObserver(self,
+                                               selector: #selector(reseiveQuoteNotification),
+                                               name: NotificationSendQuoteList,
+                                               object: nil)
+    }
+    @objc func reseiveQuoteNotification(notification: Notification) {
+        if let quotes = notification.object as? [Quote]{
+            quoteData = quotes
+            tableView.reloadData()
+        }
+    }
     
     @IBAction func quoteUpdateClick(_ sender: Any) {
-//       quoteProvider?.restartTimer()
         provider?.requestQuotes()
         tableView.reloadData(with: .simple(duration: 0.75, direction: .rotation3D(type: .spiderMan),
         constantDelay: 0))
@@ -52,37 +52,6 @@ class QuoteTableViewController: UITableViewController {
         hud.show(in: self.view)
         hud.dismiss(afterDelay: 6.0)
     }
-  
-    
-//    let quoteApi = "https://api.nomics.com/v1/currencies/ticker?key=3c8c0907276523d0ff0e94c50657de0c&format=json&convert=USD"
-//    func loadJSON() {
-//        let hud = JGProgressHUD(style: .dark)
-//        hud.textLabel.text = "Loading"
-//        hud.show(in: self.view)
-//
-//        if let url = URL(string: quoteApi) {
-//            let quoteLoadTask = URLSession.shared.dataTask(with: url) {
-//                [weak self]
-//                (data, response, error)
-//                in
-//                guard let self = self else {
-//                    return
-//                }
-//                if let data = data {
-//                    do {
-//                        self.quoteData = try JSONDecoder().decode([Quote].self, from: data)
-//                        DispatchQueue.main.async {
-//                            hud.dismiss()
-//                            self.tableView.reloadData()
-//                        }
-//                    } catch {
-//                        print("Decoding JSON failure")
-//                    }
-//                }
-//            }
-//            quoteLoadTask.resume()
-//        }
-//    }
 
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -133,7 +102,6 @@ class QuoteTableViewController: UITableViewController {
         }
     }
 }
-
 
 extension QuoteTableViewController: QuoteProviderDelegate {
     
