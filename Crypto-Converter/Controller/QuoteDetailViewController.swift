@@ -30,9 +30,21 @@ class QuoteDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = quote!.name
-         
+        
         let imageURL = URL(string: (quote?.logoUrl!)!)
-        quoteImage?.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "placeholder"))
+        //DAI,XVG,DRGN ->> библиотека не читает svg файлы указанных котировок, поэтому вручную загрузил
+        
+        switch quote?.symbol {
+               case "DAI":
+                   quoteImage.image = (UIImage(named: "DAI"))
+               case "XVG":
+                    quoteImage.image = (UIImage(named: "XVG"))
+               case "DRGN":
+                   quoteImage.image = (UIImage(named: "DRGN"))
+               default:
+                     quoteImage.sd_setImage(with:imageURL, placeholderImage: UIImage(named: "placeholder"))
+               }
+        
         quoteNameLbl.text = quote!.name
         quoteSymbolLbl.text = quote!.symbol
         quoteRankLbl.text = quote!.rank

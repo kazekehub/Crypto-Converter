@@ -64,15 +64,22 @@ class QuoteTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "quotesCellId", for: indexPath) as! QuoteTableViewCell
         
-        
         let quote = quoteData[indexPath.row]
         let imageURL = URL(string: quote.logoUrl!)
-        switch indexPath.row {
-        case 54...58,92...95,242...247:
-            cell.quoteImage.image = (UIImage(named: "placeholder"))
+        
+        //DAI,XVG,DRGN ->> библиотека не читает svg файлы указанных котировок, поэтому вручную загрузил
+        
+        switch quote.symbol {
+        case "DAI":
+            cell.quoteImage.image = (UIImage(named: "DAI"))
+        case "XVG":
+            cell.quoteImage.image = (UIImage(named: "XVG"))
+        case "DRGN":
+            cell.quoteImage.image = (UIImage(named: "DRGN"))
         default:
             cell.quoteImage.sd_setImage(with:imageURL, placeholderImage: UIImage(named: "placeholder"))
         }
+
         cell.quotePriceChangeLabel.text = quote.oneDay?.priceChangePct
             if quote.oneDay?.priceChangePct?.contains("-") == true {
                 cell.quotePriceChangeLabel.textColor = .red
