@@ -33,7 +33,6 @@ class QuoteDetailViewController: UIViewController {
         
         let imageURL = URL(string: (quote?.logoUrl!)!)
         //DAI,XVG,DRGN ->> библиотека не читает svg файлы указанных котировок, поэтому вручную загрузил
-        
         switch quote?.symbol {
                case "DAI":
                    quoteImage.image = (UIImage(named: "DAI"))

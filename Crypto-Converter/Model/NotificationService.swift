@@ -21,7 +21,7 @@ class NotificationService: QuoteProviderDelegate {
         provider = QuoteProvider(delegate: self)
     }
     func start() {
-        timer = Timer.scheduledTimer(withTimeInterval: 9999.0,
+        timer = Timer.scheduledTimer(withTimeInterval: 5.0,
                                      repeats: true,
                                      block: { [weak self]_ in self?.sendMessage()
         })

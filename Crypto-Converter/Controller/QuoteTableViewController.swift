@@ -22,7 +22,8 @@ class QuoteTableViewController: UITableViewController {
     var isSelectQuoteMode = false
     var quoteData: [Quote] = []
     var provider: QuoteProviderProtocol?
-
+    let defaults = UserDefaults.standard
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         NotificationCenter.default.addObserver(self,
@@ -39,12 +40,22 @@ class QuoteTableViewController: UITableViewController {
     
     @IBAction func quoteUpdateClick(_ sender: Any) {
         provider?.requestQuotes()
-        tableView.reloadData(with: .simple(duration: 0.75, direction: .rotation3D(type: .spiderMan),
+        tableView.reloadData(with: .simple(duration: 0.75, direction: .rotation3D(type: .doctorStrange),
         constantDelay: 0))
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if defaults.bool(forKey: "First Laucnh") == true{
+            print("already lauched")
+            defaults.set(true,forKey: "First Laucnh")
+        } else {
+            print("First")
+            defaults.set(true,forKey: "First Laucnh")
+        }
+        
+        
         provider = QuoteProvider(delegate: self)
         provider?.requestQuotes()
         let hud = JGProgressHUD(style: .dark)
@@ -89,7 +100,11 @@ class QuoteTableViewController: UITableViewController {
         cell.quoteRankLabel.text = quote.rank
         cell.quoteSymbolLabel.text = quote.symbol
         cell.quoteNameLabel.text = quote.name
-        cell.quotePriceLabel.text = "$ " + "\(quote.price!)"
+        
+        var quotePrice: Double? {
+            return Double(quote.price!)
+        }
+        cell.quotePriceLabel.text = "$ " + String(format: "%.4f", quotePrice!)
 
         return cell
     }
