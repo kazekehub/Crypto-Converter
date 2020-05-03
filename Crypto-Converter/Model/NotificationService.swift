@@ -10,6 +10,8 @@ import Foundation
 
  class NotificationService {
     var timer: Timer?
+    var provider: QuoteProviderProtocol?
+    
     func start() {
         timer = Timer.scheduledTimer(withTimeInterval: 5.0,
                                      repeats: true,
@@ -18,13 +20,28 @@ import Foundation
     }
     
     func sendMessage() {
-        
+        provider?.requestQuotes()
+//         NotificationCenter.default.post(name: NotificationSendQuoteList, object: Any?)
     }
-        
-    func stop(){
+
+    func stop() {
         timer?.invalidate()
         timer = nil
-        
+
     }
 }
+
+
+
+//  var timer: Timer?
+//
+//    func sendNotification(){
+//        NotificationCenter.default.post(name: NotificationSendQuoteList, object: quoteData)
+//    }
+
+//    func restartTimer() {
+//        sendNotification()
+//        timer?.invalidate()
+//        timer = Timer.scheduledTimer(withTimeInterval: intervalTime, repeats: true) { timer in self.loadJSON() }
+//    }
 

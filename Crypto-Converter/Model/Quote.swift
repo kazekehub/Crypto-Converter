@@ -42,7 +42,6 @@ struct Quote: Decodable {
         case highTimestamp = "high_timestamp"
         case oneDay = "1d"
       }
-    
 }
 
 struct QuoteChanges: Decodable {

@@ -32,7 +32,7 @@ class QuoteDetailViewController: UIViewController {
         self.title = quote!.name
          
         let imageURL = URL(string: (quote?.logoUrl!)!)
-           quoteImage?.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "placeholder"))
+        quoteImage?.sd_setImage(with: imageURL, placeholderImage: UIImage(named: "placeholder"))
         quoteNameLbl.text = quote!.name
         quoteSymbolLbl.text = quote!.symbol
         quoteRankLbl.text = quote!.rank
