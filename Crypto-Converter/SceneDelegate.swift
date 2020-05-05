@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import RealmSwift
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -17,6 +17,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         notificationProvider = NotificationService()
         notificationProvider?.start()
+        
+        
+        
+        
+        let realm = try! Realm()
+        let path = realm.configuration.fileURL?.absoluteString ?? ""
+        print(path)
+        
         
         guard let _ = (scene as? UIWindowScene) else { return }
     }

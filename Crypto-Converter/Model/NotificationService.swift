@@ -21,21 +21,27 @@ class NotificationService: QuoteProviderDelegate {
         provider = QuoteProvider(delegate: self)
     }
     func start() {
-        timer = Timer.scheduledTimer(withTimeInterval: 5.0,
+        timer = Timer.scheduledTimer(withTimeInterval: 15.0,
                                      repeats: true,
                                      block: { [weak self]_ in self?.sendMessage()
         })
     }
     func sendMessage() {
-        provider?.requestQuotes()
-        provideQuotes(quotes: quotes)
-        if !quotes.isEmpty{
-            NotificationCenter.default.post(name: NotificationSendQuoteList, object: quotes)
+        if Reachability.isConnectedToNetwork(){
+            provider?.requestQuotes()
+            provideQuotes(quotes: quotes)
+            if !quotes.isEmpty {
+                NotificationCenter.default.post(name: NotificationSendQuoteList, object: quotes)
+            }
+            print("Internet Connection Available!")
+        }else{
+            print("Internet Connection not Available!")
         }
+        
+        
     }
     func stop() {
         timer?.invalidate()
         timer = nil
-
     }
 }

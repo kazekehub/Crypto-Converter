@@ -9,11 +9,13 @@
 /* Begin PBXBuildFile section */
 		52883DBEEF2BFBB81A4ADC37 /* Pods_Crypto_Converter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25256BF93EAC76174113C7B5 /* Pods_Crypto_Converter.framework */; };
 		7C3BFDB62454799500807049 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3BFDB52454799500807049 /* AboutViewController.swift */; };
+		7C538CAF2461F3F10075711A /* CheckNetwotkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C538CAE2461F3F10075711A /* CheckNetwotkConnection.swift */; };
 		7C710649245AB56200E94650 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C710648245AB56200E94650 /* Notifications.swift */; };
 		7C71064B245AB56900E94650 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71064A245AB56900E94650 /* NotificationService.swift */; };
 		7C710651245DB99200E94650 /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 7C710650245DB99200E94650 /* SDWebImageSVGCoder */; };
 		7C710654245DCB8B00E94650 /* JGProgressHUD in Frameworks */ = {isa = PBXBuildFile; productRef = 7C710653245DCB8B00E94650 /* JGProgressHUD */; };
 		7C710658245E367F00E94650 /* QuoteProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C710657245E367F00E94650 /* QuoteProvider.swift */; };
+		7C71068724609B8B00E94650 /* QuoteCached.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71068624609B8B00E94650 /* QuoteCached.swift */; };
 		7CEAC77A244F81CA00F83FF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC779244F81CA00F83FF9 /* AppDelegate.swift */; };
 		7CEAC77C244F81CA00F83FF9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CEAC77B244F81CA00F83FF9 /* SceneDelegate.swift */; };
 		7CEAC781244F81CA00F83FF9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CEAC77F244F81CA00F83FF9 /* Main.storyboard */; };
@@ -31,9 +33,11 @@
 		25256BF93EAC76174113C7B5 /* Pods_Crypto_Converter.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_Converter.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3A5FF18F0442A1EF8A61FAB0 /* Pods-Crypto-Converter.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto-Converter.release.xcconfig"; path = "Target Support Files/Pods-Crypto-Converter/Pods-Crypto-Converter.release.xcconfig"; sourceTree = "<group>"; };
 		7C3BFDB52454799500807049 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
+		7C538CAE2461F3F10075711A /* CheckNetwotkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNetwotkConnection.swift; sourceTree = "<group>"; };
 		7C710648245AB56200E94650 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		7C71064A245AB56900E94650 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		7C710657245E367F00E94650 /* QuoteProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteProvider.swift; sourceTree = "<group>"; };
+		7C71068624609B8B00E94650 /* QuoteCached.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCached.swift; sourceTree = "<group>"; };
 		7CAF2A9E245A40ED00C12FBA /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CAF2AA2245A410900C12FBA /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7CAF2AA6245A464300C12FBA /* SwiftSVG.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SwiftSVG.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +98,7 @@
 				7CEAC78E244F81EE00F83FF9 /* Model */,
 				7CEAC779244F81CA00F83FF9 /* AppDelegate.swift */,
 				7CEAC77B244F81CA00F83FF9 /* SceneDelegate.swift */,
+				7C538CAE2461F3F10075711A /* CheckNetwotkConnection.swift */,
 				7CEAC782244F81CD00F83FF9 /* Assets.xcassets */,
 				7CEAC787244F81CD00F83FF9 /* Info.plist */,
 			);
@@ -116,6 +121,7 @@
 			children = (
 				7CEAC796244F836600F83FF9 /* Converter.swift */,
 				7CEAC792244F82B700F83FF9 /* Quote.swift */,
+				7C71068624609B8B00E94650 /* QuoteCached.swift */,
 				7C710648245AB56200E94650 /* Notifications.swift */,
 				7C71064A245AB56900E94650 /* NotificationService.swift */,
 				7C710657245E367F00E94650 /* QuoteProvider.swift */,
@@ -279,6 +285,8 @@
 			files = (
 				7C710649245AB56200E94650 /* Notifications.swift in Sources */,
 				7C71064B245AB56900E94650 /* NotificationService.swift in Sources */,
+				7C71068724609B8B00E94650 /* QuoteCached.swift in Sources */,
+				7C538CAF2461F3F10075711A /* CheckNetwotkConnection.swift in Sources */,
 				7CEAC77A244F81CA00F83FF9 /* AppDelegate.swift in Sources */,
 				7C710658245E367F00E94650 /* QuoteProvider.swift in Sources */,
 				7CEAC799244F83CD00F83FF9 /* QuoteDetailViewController.swift in Sources */,
