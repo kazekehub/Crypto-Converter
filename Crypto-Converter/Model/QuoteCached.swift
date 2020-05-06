@@ -26,11 +26,6 @@ class QuoteCached: Object {
     dynamic var high = ""
     dynamic var highTimestamp = ""
     dynamic var oneDay : QuoteChanged?
-
-//    override class func primeryKey() -> String?{
-//        return #keyPath(id)
-//    }
-
 }
 
 @objcMembers

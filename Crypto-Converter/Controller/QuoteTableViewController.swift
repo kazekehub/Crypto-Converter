@@ -215,6 +215,5 @@ extension QuoteTableViewController: QuoteProviderDelegate {
             self.hud.dismiss()
             self.tableView.reloadData()
         }
-        
     }
 }
