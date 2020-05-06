@@ -536,7 +536,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="bitcoinsign.circle.fill" catalog="system"/>
+                                <state key="normal" image="quoteCurrency">
+                                    <color key="titleColor" red="0.43529411764705883" green="0.74117647058823533" blue="0.96078431372549022" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                </state>
                                 <connections>
                                     <action selector="firstQuoteButtonClick:" destination="boj-4O-JFc" eventType="touchUpInside" id="ySc-dv-Zc3"/>
                                     <segue destination="SuS-jf-Uaz" kind="presentation" identifier="firstQuoteButton" id="MKL-by-NSw"/>
@@ -545,7 +547,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBq-Ri-viX">
                                 <rect key="frame" x="50" y="248" width="60" height="60"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" image="bitcoinsign.circle.fill" catalog="system"/>
+                                <state key="normal" image="quoteCurrency"/>
                                 <connections>
                                     <action selector="secondQuoteButtonClick:" destination="boj-4O-JFc" eventType="touchUpInside" id="b6Y-OR-Etx"/>
                                     <segue destination="SuS-jf-Uaz" kind="presentation" identifier="secondQuoteButton" id="RCV-6x-9vx"/>
@@ -656,10 +658,10 @@
     <resources>
         <image name="arrow.2.circlepath" catalog="system" width="128" height="101"/>
         <image name="bitcoinsign.circle" catalog="system" width="128" height="121"/>
-        <image name="bitcoinsign.circle.fill" catalog="system" width="128" height="121"/>
         <image name="calculator" width="28" height="28"/>
         <image name="info.circle" catalog="system" width="128" height="121"/>
         <image name="jumysbar" width="558" height="374"/>
         <image name="profileImage" width="2376" height="2376"/>
+        <image name="quoteCurrency" width="50" height="50"/>
     </resources>
 </document>

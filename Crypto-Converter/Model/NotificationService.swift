@@ -21,7 +21,7 @@ class NotificationService: QuoteProviderDelegate {
         provider = QuoteProvider(delegate: self)
     }
     func start() {
-        timer = Timer.scheduledTimer(withTimeInterval: 50.0,
+        timer = Timer.scheduledTimer(withTimeInterval: 30.0,
                                      repeats: true,
                                      block: { [weak self]_ in self?.sendMessage()
         })
@@ -34,12 +34,9 @@ class NotificationService: QuoteProviderDelegate {
                 NotificationCenter.default.post(name: NotificationSendQuoteList, object: quotes)
                 print("Notification Sended to Quote")
             }
-            
         }else{
             print("Internet Connection not Available!")
         }
-        
-        
     }
     func stop() {
         timer?.invalidate()

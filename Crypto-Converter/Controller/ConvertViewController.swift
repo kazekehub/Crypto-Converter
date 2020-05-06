@@ -11,8 +11,8 @@ import SDWebImageSVGCoder
 
 class ConvertViewController: UIViewController,UITextFieldDelegate {
     
-    var firstQuote: Quote?
-    var secondQuote: Quote?
+    var firstQuote: QuoteCached?
+    var secondQuote: QuoteCached?
     var isFirstButtonClicked: Bool?
     
     required init?(coder: NSCoder) {
@@ -23,7 +23,7 @@ class ConvertViewController: UIViewController,UITextFieldDelegate {
                                                object: nil)
     }
     @objc func selectQuoteNotification(notification: Notification){
-        if let quote = notification.object as? Quote {
+        if let quote = notification.object as? QuoteCached {
             if isFirstButtonClicked == true {
                 firstQuote = quote
                 _ = setButtonImage(button: firstQuoteButton, quote: firstQuote!)
@@ -47,8 +47,8 @@ class ConvertViewController: UIViewController,UITextFieldDelegate {
         secondInputTxtFld.delegate = self
     }
     
-    func setButtonImage(button: UIButton, quote: Quote) -> UIButton {
-        let imageURL = URL(string: quote.logoUrl!)
+    func setButtonImage(button: UIButton, quote: QuoteCached) -> UIButton {
+        let imageURL = URL(string: quote.logoUrl)
         button.sd_setImage(with:imageURL, for: .normal, placeholderImage: UIImage(named: "placeholder"))
    
         return button
@@ -61,10 +61,10 @@ class ConvertViewController: UIViewController,UITextFieldDelegate {
             return Double(firstInputTxtFld.text!)
         }
         var firstPrice: Double? {
-            return Double(firstQuote.price!)
+            return Double(firstQuote.price)
         }
         var secondPrice: Double?{
-            return Double(secondQuote.price!)
+            return Double(secondQuote.price)
         }
         if firstInputTxtFld.isEditing == true, firstInputTxtFld.text != "" {
             let baseQuote = Converter(baseQuote: secondPrice!)

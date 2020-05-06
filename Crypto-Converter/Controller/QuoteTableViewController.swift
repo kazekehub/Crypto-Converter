@@ -25,7 +25,7 @@ class QuoteTableViewController: UITableViewController {
     var provider: QuoteProviderProtocol?
     let defaults = UserDefaults.standard
     var isFirstLaunch = false
-    
+    let hud = JGProgressHUD(style: .dark)
     var modelData: [QuoteCached] = []
     var priceModelChange: [QuoteChanged] = []
     
@@ -39,46 +39,42 @@ class QuoteTableViewController: UITableViewController {
     @objc func reseiveQuoteNotification(notification: Notification) {
         if let quotes = notification.object as? [Quote] {
             readQuotes()
-          deleteQuote()
+            deleteQuote()
             quoteData = quotes
-            tableView.reloadData()
+            provider?.requestQuotes()
         }
     }
     
     @IBAction func quoteUpdateClick(_ sender: Any) {
         provider?.requestQuotes()
-        tableView.reloadData(with: .simple(duration: 0.75, direction: .rotation3D(type: .doctorStrange),
-        constantDelay: 0))
+        tableView.reloadData(with: .simple(duration: 0.75, direction: .rotation3D(type: .doctorStrange), constantDelay: 0))
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        if Reachability.isConnectedToNetwork(){
-            print("Internet Connection Available!")
-        }else{
-            print("Internet Connection not Available!")
-        }
-        
-        
         if defaults.bool(forKey: "First Laucnh") == true{
             readQuotes()
             isFirstLaunch = false
-            print("already lauched")
+            showSimpleAlert(message: "Welcome Back \n I'm glad to see you again 🥳")
             defaults.set(true,forKey: "First Laucnh")
         } else {
             isFirstLaunch = true
+            showSimpleAlert(message: "HI! Welcome to my app \n 😎")
+            
             provider = QuoteProvider(delegate: self)
             provider?.requestQuotes()
-            
-            let hud = JGProgressHUD(style: .dark)
             hud.textLabel.text = "Loading"
             hud.show(in: self.view)
-            hud.dismiss(afterDelay: 6.0)
-    
-            print("First")
             defaults.set(true,forKey: "First Laucnh")
         }
+    }
+    
+    func showSimpleAlert(message: String) {
+        let alert = UIAlertController(title: message, message: "",         preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: { _ in
+           }))
+           self.present(alert, animated: true, completion: nil)
     }
     
     func saveQuotesToRealm(quote: QuoteCached) {
@@ -91,18 +87,6 @@ class QuoteTableViewController: UITableViewController {
             print("Failed to save quotes. \(error)")
         }
     }
-    
-//   func savePriceChangedToRealm(price: QuoteChanged){
-//          let realm = try! Realm()
-//              do {
-//                  try realm.write {
-//                      realm.add(price)
-//                  }
-//              } catch {
-//                  print("Failed to save price changing. \(error)")
-//              }
-//          }
-//      }
     
     func saveToRealm() {
         for quote in quoteData {
@@ -134,9 +118,6 @@ class QuoteTableViewController: UITableViewController {
            
             saveQuotesToRealm(quote: modelData)
         }
-//        readQuotes()
-//        tableView.reloadData()
-        
     }
     
     func readQuotes() {
@@ -154,18 +135,15 @@ class QuoteTableViewController: UITableViewController {
     func deleteQuote() {
         do {
             let realm = try! Realm()
-            try! realm.write{
+            try? realm.write {
                 realm.deleteAll()
                 self.modelData.removeAll()
             }
-            provider = QuoteProvider(delegate: self)
-            provider?.requestQuotes()
          } catch {
             print("error \(error)")
         }
     }
      
-    
     // MARK: - Table view data source
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
@@ -178,7 +156,6 @@ class QuoteTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "quotesCellId", for: indexPath) as! QuoteTableViewCell
         
         let realmQuote = modelData[indexPath.row]
-        
         let imageURL = URL(string: realmQuote.logoUrl)
         //DAI,XVG,DRGN ->> библиотека не читает svg файлы указанных котировок, поэтому вручную загрузил
         switch realmQuote.symbol {
@@ -235,6 +212,7 @@ extension QuoteTableViewController: QuoteProviderDelegate {
         }
         DispatchQueue.main.async {
             self.readQuotes()
+            self.hud.dismiss()
             self.tableView.reloadData()
         }
         
