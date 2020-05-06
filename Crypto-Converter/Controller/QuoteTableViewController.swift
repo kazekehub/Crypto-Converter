@@ -24,10 +24,9 @@ class QuoteTableViewController: UITableViewController {
     var quoteData: [Quote] = []
     var provider: QuoteProviderProtocol?
     let defaults = UserDefaults.standard
-    var isFirstLaunch = false
     let hud = JGProgressHUD(style: .dark)
     var modelData: [QuoteCached] = []
-    var priceModelChange: [QuoteChanged] = []
+    var isRealmDataDeleted = false
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -39,15 +38,17 @@ class QuoteTableViewController: UITableViewController {
     @objc func reseiveQuoteNotification(notification: Notification) {
         if let quotes = notification.object as? [Quote] {
             readQuotes()
-            deleteQuote()
             quoteData = quotes
             provider?.requestQuotes()
+            deleteQuote()
         }
     }
     
     @IBAction func quoteUpdateClick(_ sender: Any) {
+        readQuotes()
         provider?.requestQuotes()
-        tableView.reloadData(with: .simple(duration: 0.75, direction: .rotation3D(type: .doctorStrange), constantDelay: 0))
+        deleteQuote()
+//        tableView.reloadData(with: .simple(duration: 0.75, direction: .rotation3D(type: .doctorStrange), constantDelay: 0))
     }
     
     override func viewDidLoad() {
@@ -55,13 +56,10 @@ class QuoteTableViewController: UITableViewController {
         
         if defaults.bool(forKey: "First Laucnh") == true{
             readQuotes()
-            isFirstLaunch = false
             showSimpleAlert(message: "Welcome Back \n I'm glad to see you again 🥳")
             defaults.set(true,forKey: "First Laucnh")
         } else {
-            isFirstLaunch = true
             showSimpleAlert(message: "HI! Welcome to my app \n 😎")
-            
             provider = QuoteProvider(delegate: self)
             provider?.requestQuotes()
             hud.textLabel.text = "Loading"
@@ -127,6 +125,7 @@ class QuoteTableViewController: UITableViewController {
             result.forEach { quote in
                 modelData.append(quote)
             }
+            print(modelData[0].name)
         } catch {
             print("error \(error)")
         }
@@ -138,6 +137,8 @@ class QuoteTableViewController: UITableViewController {
             try? realm.write {
                 realm.deleteAll()
                 self.modelData.removeAll()
+                isRealmDataDeleted = true
+                print("delete finish \(isRealmDataDeleted)")
             }
          } catch {
             print("error \(error)")
@@ -207,10 +208,13 @@ class QuoteTableViewController: UITableViewController {
 extension QuoteTableViewController: QuoteProviderDelegate {
     func provideQuotes(quotes: [Quote]) {
         quoteData = quotes
-        if modelData.isEmpty == true{
-            saveToRealm()
-        }
+    
         DispatchQueue.main.async {
+            if self.modelData == [] {
+                self.saveToRealm()
+            } else if self.isRealmDataDeleted == true {
+                self.saveToRealm()
+            }
             self.readQuotes()
             self.hud.dismiss()
             self.tableView.reloadData()
