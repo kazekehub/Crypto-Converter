@@ -12,7 +12,7 @@ import SDWebImageSVGCoder
 
 class QuoteDetailViewController: UIViewController {
     
-    var quote: Quote?
+    var quote: QuoteCached?
     
     @IBOutlet weak var quoteImage: UIImageView!
     @IBOutlet weak var quoteNameLbl: UILabel!
@@ -31,7 +31,7 @@ class QuoteDetailViewController: UIViewController {
         super.viewDidLoad()
         self.title = quote!.name
         
-        let imageURL = URL(string: (quote?.logoUrl!)!)
+        let imageURL = URL(string: (quote?.logoUrl)!)
         //DAI,XVG,DRGN ->> библиотека не читает svg файлы указанных котировок, поэтому вручную загрузил
         switch quote?.symbol {
                case "DAI":
