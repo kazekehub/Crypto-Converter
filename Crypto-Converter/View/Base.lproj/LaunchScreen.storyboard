@@ -1,25 +1,54 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="DDU-rE-Pbb">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="EHf-IW-A2E">
+        <scene sceneID="YNN-bk-mLv">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                <viewController id="DDU-rE-Pbb" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="odq-T0-Uk1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="jumysbar" translatesAutoresizingMaskIntoConstraints="NO" id="OIM-vh-7sN">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Crypto Converter Version 1.0" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zXk-Q2-nOD">
+                                <rect key="frame" x="122" y="702" width="170" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="6w8-cu-e7g"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="RHb-Z0-dCI"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="170" id="YAO-fG-eHy"/>
+                                    <constraint firstAttribute="width" constant="170" id="n6D-b0-xDm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.91936694080000003" green="0.97471671449999997" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="OIM-vh-7sN" firstAttribute="top" secondItem="wKj-Ai-3TC" secondAttribute="top" id="41S-wB-Lcp"/>
+                            <constraint firstItem="wKj-Ai-3TC" firstAttribute="bottom" secondItem="OIM-vh-7sN" secondAttribute="bottom" id="LjL-5e-LUl"/>
+                            <constraint firstItem="zXk-Q2-nOD" firstAttribute="centerX" secondItem="wKj-Ai-3TC" secondAttribute="centerX" id="M3Z-Q2-wC8"/>
+                            <constraint firstItem="wKj-Ai-3TC" firstAttribute="trailing" secondItem="OIM-vh-7sN" secondAttribute="trailing" id="RP1-UB-KPD"/>
+                            <constraint firstItem="OIM-vh-7sN" firstAttribute="leading" secondItem="wKj-Ai-3TC" secondAttribute="leading" id="XcA-xG-xEd"/>
+                            <constraint firstItem="wKj-Ai-3TC" firstAttribute="bottom" secondItem="zXk-Q2-nOD" secondAttribute="bottom" constant="100" id="rmg-lQ-eRf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="wKj-Ai-3TC"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wg8-Cu-QLg" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="49" y="355"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="jumysbar" width="558" height="374"/>
+    </resources>
 </document>

@@ -9,32 +9,58 @@
 import Foundation
 import RealmSwift
 
-@objcMembers
 class QuoteCached: Object {
-    dynamic var id = ""
-    dynamic var currency = ""
-    dynamic var symbol = ""
-    dynamic var name = ""
-    dynamic var rank = ""
-    dynamic var price = ""
-    dynamic var logoUrl = ""
-    dynamic var priceDate = ""
-    dynamic var priceTimeStamp = ""
-    dynamic var marketCap = ""
-    dynamic var circulatingSupply = ""
-    dynamic var maxSupply = ""
-    dynamic var high = ""
-    dynamic var highTimestamp = ""
-    dynamic var oneDay : QuoteChanged?
+    @objc dynamic var id = ""
+    @objc dynamic var currency = ""
+    @objc dynamic var symbol = ""
+    @objc dynamic var name = ""
+    @objc dynamic var rank = ""
+    @objc dynamic var price = ""
+    @objc dynamic var logoUrl = ""
+    @objc dynamic var priceDate = ""
+    @objc dynamic var priceTimeStamp = ""
+    @objc dynamic var marketCap = ""
+    @objc dynamic var circulatingSupply = ""
+    @objc dynamic var maxSupply = ""
+    @objc dynamic var high = ""
+    @objc dynamic var highTimestamp = ""
+    
+    @objc dynamic var priceChange = ""
+    @objc dynamic var priceChangePct = ""
+    @objc dynamic var volume = ""
+    @objc dynamic var volumeChange = ""
+    @objc dynamic var volumeChangePct = ""
+    @objc dynamic var marketCapChange = ""
+    @objc dynamic var marketCapChangePct = ""
+    
+    override static func primaryKey() -> String? {
+        return "name"
+    }
+    
+    convenience init(quote: Quote) {
+        self.init()
+        id = quote.id
+        currency = quote.currency ?? ""
+        symbol = quote.symbol ?? ""
+        name = quote.name ?? ""
+        rank = quote.rank ?? ""
+        price = quote.price ?? ""
+        logoUrl = quote.logoUrl ?? ""
+        priceDate = quote.priceDate ?? ""
+        priceTimeStamp = quote.priceTimeStamp ?? ""
+        marketCap = quote.marketCap ?? ""
+        circulatingSupply = quote.circulatingSupply ?? ""
+        maxSupply = quote.maxSupply ?? ""
+        high = quote.high ?? ""
+        highTimestamp = quote.highTimestamp ?? ""
+        
+        priceChange = quote.oneDay?.priceChange ?? ""
+        priceChangePct = quote.oneDay?.priceChangePct ?? ""
+        volume = quote.oneDay?.volume ?? ""
+        volumeChange = quote.oneDay?.volumeChange ?? ""
+        volumeChangePct = quote.oneDay?.volumeChangePct ?? ""
+        marketCapChange = quote.oneDay?.marketCapChange ?? ""
+        marketCapChangePct = quote.oneDay?.marketCapChangePct ?? ""
+    }
 }
 
-@objcMembers
-class QuoteChanged: Object {
-    dynamic var priceChange = ""
-    dynamic var priceChangePct = ""
-    dynamic var volume = ""
-    dynamic var volumeChange = ""
-    dynamic var volumeChangePct = ""
-    dynamic var marketCapChange = ""
-    dynamic var marketCapChangePct = ""
-}

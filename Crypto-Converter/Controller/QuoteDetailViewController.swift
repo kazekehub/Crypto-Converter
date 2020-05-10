@@ -12,7 +12,7 @@ import SDWebImageSVGCoder
 
 class QuoteDetailViewController: UIViewController {
     
-    var quote: QuoteCached?
+    var quote: Quote?
     
     @IBOutlet weak var quoteImage: UIImageView!
     @IBOutlet weak var quoteNameLbl: UILabel!

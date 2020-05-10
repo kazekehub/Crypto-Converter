@@ -21,13 +21,13 @@ class NotificationService: QuoteProviderDelegate {
         provider = QuoteProvider(delegate: self)
     }
     func start() {
-        timer = Timer.scheduledTimer(withTimeInterval: 55.0,
+        timer = Timer.scheduledTimer(withTimeInterval: 10.0,
                                      repeats: true,
                                      block: { [weak self]_ in self?.sendMessage()
         })
     }
     func sendMessage() {
-        if Reachability.isConnectedToNetwork(){
+        if Reachability.isConnectedToNetwork() {
             provider?.requestQuotes()
             provideQuotes(quotes: quotes)
             if !quotes.isEmpty {

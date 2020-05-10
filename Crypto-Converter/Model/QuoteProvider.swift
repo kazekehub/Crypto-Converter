@@ -14,6 +14,7 @@ protocol QuoteProviderDelegate {
 
 class QuoteProvider: QuoteProviderProtocol {
     var delegate: QuoteProviderDelegate?
+    var quoteCachedProvider = QuoteCachedProvider()
     
     let quoteApi = "https://api.nomics.com/v1/currencies/ticker?key=3c8c0907276523d0ff0e94c50657de0c&format=json&convert=USD"
     
@@ -31,12 +32,15 @@ class QuoteProvider: QuoteProviderProtocol {
             if let data = data {
                 do {
                     let quoteData = try JSONDecoder().decode([Quote].self, from: data)
-                    self!.delegate?.provideQuotes(quotes: quoteData)
-                    } catch {
-                        print("Decoding JSON failure")
-                    }
+                     self?.delegate?.provideQuotes(quotes: quoteData)
+//                    if let cachedQuotes = self?.quoteCachedProvider.saveAndUpdateQuotes(quotes: quoteData){
+//                        self?.delegate?.provideQuotes(quotes: cachedQuotes)
+//                    }
+                } catch {
+                    print("Decoding JSON failure")
                 }
             }
+        }
         quoteLoadTask.resume()
     }
     

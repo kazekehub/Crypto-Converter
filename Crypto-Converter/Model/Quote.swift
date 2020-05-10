@@ -42,6 +42,31 @@ struct Quote: Decodable {
         case highTimestamp = "high_timestamp"
         case oneDay = "1d"
       }
+    
+    init(quoteCached: QuoteCached) {
+        id = quoteCached.id
+        currency = quoteCached.currency
+        symbol = quoteCached.symbol
+        name = quoteCached.name
+        rank = quoteCached.rank
+        price = quoteCached.price
+        logoUrl = quoteCached.logoUrl
+        priceDate = quoteCached.priceDate
+        priceTimeStamp = quoteCached.priceTimeStamp
+        marketCap = quoteCached.marketCap
+        circulatingSupply = quoteCached.circulatingSupply
+        maxSupply = quoteCached.maxSupply
+        high = quoteCached.high
+        highTimestamp = quoteCached.highTimestamp
+        
+        oneDay?.priceChange = quoteCached.priceChange
+        oneDay?.priceChangePct = quoteCached.priceChangePct
+        oneDay?.volume = quoteCached.volume
+        oneDay?.volumeChange = quoteCached.volumeChange
+        oneDay?.volumeChangePct = quoteCached.volumeChangePct
+        oneDay?.marketCapChange = quoteCached.marketCapChange
+        oneDay?.marketCapChangePct = quoteCached.marketCapChangePct
+    }
 }
 
 struct QuoteChanges: Decodable {
