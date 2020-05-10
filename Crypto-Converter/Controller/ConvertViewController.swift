@@ -8,12 +8,14 @@
 import UIKit
 import SDWebImage
 import SDWebImageSVGCoder
+import SwiftySound
 
-class ConvertViewController: UIViewController,UITextFieldDelegate {
+class ConvertViewController: UIViewController,UITextFieldDelegate{
     
-    var firstQuote: QuoteCached?
-    var secondQuote: QuoteCached?
+    var firstQuote: Quote?
+    var secondQuote: Quote?
     var isFirstButtonClicked: Bool?
+    private var buttonSound: Sound?
     
     required init?(coder: NSCoder) {
         super.init(coder: coder)
@@ -23,7 +25,7 @@ class ConvertViewController: UIViewController,UITextFieldDelegate {
                                                object: nil)
     }
     @objc func selectQuoteNotification(notification: Notification){
-        if let quote = notification.object as? QuoteCached {
+        if let quote = notification.object as? Quote {
             if isFirstButtonClicked == true {
                 firstQuote = quote
                 _ = setButtonImage(button: firstQuoteButton, quote: firstQuote!)
@@ -45,10 +47,14 @@ class ConvertViewController: UIViewController,UITextFieldDelegate {
         super.viewDidLoad()
         firstInputTxtFld.delegate = self
         secondInputTxtFld.delegate = self
+        
+        if let buttonUrl = Bundle.main.url(forResource: "ButtonClick_Sound", withExtension: "wav") {
+            buttonSound = Sound(url: buttonUrl)
+        }
     }
     
-    func setButtonImage(button: UIButton, quote: QuoteCached) -> UIButton {
-        let imageURL = URL(string: quote.logoUrl)
+    func setButtonImage(button: UIButton, quote: Quote) -> UIButton {
+        let imageURL = URL(string: quote.logoUrl!)
         button.sd_setImage(with:imageURL, for: .normal, placeholderImage: UIImage(named: "placeholder"))
    
         return button
@@ -61,10 +67,10 @@ class ConvertViewController: UIViewController,UITextFieldDelegate {
             return Double(firstInputTxtFld.text!)
         }
         var firstPrice: Double? {
-            return Double(firstQuote.price)
+            return Double(firstQuote.price!)
         }
         var secondPrice: Double?{
-            return Double(secondQuote.price)
+            return Double(secondQuote.price!)
         }
         if firstInputTxtFld.isEditing == true, firstInputTxtFld.text != "" {
             let baseQuote = Converter(baseQuote: secondPrice!)
@@ -79,12 +85,15 @@ class ConvertViewController: UIViewController,UITextFieldDelegate {
         secondInputTxtFld.resignFirstResponder()
     }
     
+    
     @IBAction func firstQuoteButtonClick(_ sender: Any) {
         isFirstButtonClicked = true
+        Sound.play(file: "ButtonClick_Sound", fileExtension: "wav", numberOfLoops: 0)
     }
         
     @IBAction func secondQuoteButtonClick(_ sender: Any) {
         isFirstButtonClicked = false
+        Sound.play(file: "ButtonClick_Sound", fileExtension: "wav", numberOfLoops: 0)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

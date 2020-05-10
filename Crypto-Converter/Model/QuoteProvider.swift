@@ -33,9 +33,6 @@ class QuoteProvider: QuoteProviderProtocol {
                 do {
                     let quoteData = try JSONDecoder().decode([Quote].self, from: data)
                      self?.delegate?.provideQuotes(quotes: quoteData)
-//                    if let cachedQuotes = self?.quoteCachedProvider.saveAndUpdateQuotes(quotes: quoteData){
-//                        self?.delegate?.provideQuotes(quotes: cachedQuotes)
-//                    }
                 } catch {
                     print("Decoding JSON failure")
                 }

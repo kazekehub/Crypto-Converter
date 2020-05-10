@@ -11,6 +11,9 @@
 		7C3BFDB62454799500807049 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C3BFDB52454799500807049 /* AboutViewController.swift */; };
 		7C538CAF2461F3F10075711A /* CheckNetwotkConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C538CAE2461F3F10075711A /* CheckNetwotkConnection.swift */; };
 		7C538CB1246750C70075711A /* QuoteCachedProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C538CB0246750C70075711A /* QuoteCachedProvider.swift */; };
+		7C538CB3246871690075711A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C538CB2246871680075711A /* Extensions.swift */; };
+		7C538CB824687CEF0075711A /* ButtonClick_Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7C538CB724687CEF0075711A /* ButtonClick_Sound.wav */; };
+		7C538CBD246884F80075711A /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 7C538CBC246884F80075711A /* SwiftySound */; };
 		7C710649245AB56200E94650 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C710648245AB56200E94650 /* Notifications.swift */; };
 		7C71064B245AB56900E94650 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71064A245AB56900E94650 /* NotificationService.swift */; };
 		7C710651245DB99200E94650 /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 7C710650245DB99200E94650 /* SDWebImageSVGCoder */; };
@@ -36,6 +39,8 @@
 		7C3BFDB52454799500807049 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		7C538CAE2461F3F10075711A /* CheckNetwotkConnection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckNetwotkConnection.swift; sourceTree = "<group>"; };
 		7C538CB0246750C70075711A /* QuoteCachedProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCachedProvider.swift; sourceTree = "<group>"; };
+		7C538CB2246871680075711A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		7C538CB724687CEF0075711A /* ButtonClick_Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ButtonClick_Sound.wav; sourceTree = "<group>"; };
 		7C710648245AB56200E94650 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		7C71064A245AB56900E94650 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		7C710657245E367F00E94650 /* QuoteProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteProvider.swift; sourceTree = "<group>"; };
@@ -67,6 +72,7 @@
 			files = (
 				52883DBEEF2BFBB81A4ADC37 /* Pods_Crypto_Converter.framework in Frameworks */,
 				7C710654245DCB8B00E94650 /* JGProgressHUD in Frameworks */,
+				7C538CBD246884F80075711A /* SwiftySound in Frameworks */,
 				7C710651245DB99200E94650 /* SDWebImageSVGCoder in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -74,6 +80,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7C538CB424687C6A0075711A /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				7C538CB724687CEF0075711A /* ButtonClick_Sound.wav */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
 		7CEAC76D244F81CA00F83FF9 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +113,8 @@
 				7CEAC78F244F81F700F83FF9 /* View */,
 				7CEAC78E244F81EE00F83FF9 /* Model */,
 				7CEAC779244F81CA00F83FF9 /* AppDelegate.swift */,
+				7C538CB424687C6A0075711A /* Sound */,
+				7C538CB2246871680075711A /* Extensions.swift */,
 				7CEAC77B244F81CA00F83FF9 /* SceneDelegate.swift */,
 				7C538CAE2461F3F10075711A /* CheckNetwotkConnection.swift */,
 				7CEAC782244F81CD00F83FF9 /* Assets.xcassets */,
@@ -184,6 +200,7 @@
 			packageProductDependencies = (
 				7C710650245DB99200E94650 /* SDWebImageSVGCoder */,
 				7C710653245DCB8B00E94650 /* JGProgressHUD */,
+				7C538CBC246884F80075711A /* SwiftySound */,
 			);
 			productName = "Crypto-Converter";
 			productReference = 7CEAC776244F81CA00F83FF9 /* Crypto-Converter 44.app */;
@@ -216,6 +233,7 @@
 			packageReferences = (
 				7C71064F245DB99200E94650 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */,
 				7C710652245DCB8B00E94650 /* XCRemoteSwiftPackageReference "JGProgressHUD" */,
+				7C538CBB246884F80075711A /* XCRemoteSwiftPackageReference "SwiftySound" */,
 			);
 			productRefGroup = 7CEAC777244F81CA00F83FF9 /* Products */;
 			projectDirPath = "";
@@ -234,6 +252,7 @@
 				7CEAC786244F81CD00F83FF9 /* LaunchScreen.storyboard in Resources */,
 				7CEAC783244F81CD00F83FF9 /* Assets.xcassets in Resources */,
 				7CEAC781244F81CA00F83FF9 /* Main.storyboard in Resources */,
+				7C538CB824687CEF0075711A /* ButtonClick_Sound.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,6 +308,7 @@
 				7C710649245AB56200E94650 /* Notifications.swift in Sources */,
 				7C71064B245AB56900E94650 /* NotificationService.swift in Sources */,
 				7C71068724609B8B00E94650 /* QuoteCached.swift in Sources */,
+				7C538CB3246871690075711A /* Extensions.swift in Sources */,
 				7C538CB1246750C70075711A /* QuoteCachedProvider.swift in Sources */,
 				7C538CAF2461F3F10075711A /* CheckNetwotkConnection.swift in Sources */,
 				7CEAC77A244F81CA00F83FF9 /* AppDelegate.swift in Sources */,
@@ -506,6 +526,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		7C538CBB246884F80075711A /* XCRemoteSwiftPackageReference "SwiftySound" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/adamcichy/SwiftySound.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.2.0;
+			};
+		};
 		7C71064F245DB99200E94650 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SDWebImage/SDWebImageSVGCoder.git";
@@ -525,6 +553,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		7C538CBC246884F80075711A /* SwiftySound */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7C538CBB246884F80075711A /* XCRemoteSwiftPackageReference "SwiftySound" */;
+			productName = SwiftySound;
+		};
 		7C710650245DB99200E94650 /* SDWebImageSVGCoder */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 7C71064F245DB99200E94650 /* XCRemoteSwiftPackageReference "SDWebImageSVGCoder" */;
