@@ -18,7 +18,6 @@ class QuoteTableViewCell: UITableViewCell {
         cardView.layer.shadowOffset = CGSize.init(width: 0, height: 2)
         cardView.layer.shadowRadius = 10
             }
-    
     @IBOutlet weak var quoteRankLabel: UILabel!
     @IBOutlet weak var quoteImage: UIImageView!
     @IBOutlet weak var quoteNameLabel: UILabel!

@@ -29,9 +29,11 @@ class ConvertViewController: UIViewController,UITextFieldDelegate{
             if isFirstButtonClicked == true {
                 firstQuote = quote
                 _ = setButtonImage(button: firstQuoteButton, quote: firstQuote!)
+                firstQuoteSymbolLbl.text = quote.symbol!
             } else {
                 secondQuote = quote
                 _ = setButtonImage(button: secondQuoteButton, quote: secondQuote!)
+                secondQuoteSymbolLbl.text = quote.symbol!
             }
         } else {
             print("quote didn't selected")
@@ -41,7 +43,10 @@ class ConvertViewController: UIViewController,UITextFieldDelegate{
     @IBOutlet weak var firstInputTxtFld: UITextField!
     @IBOutlet weak var secondInputTxtFld: UITextField!
     @IBOutlet weak var firstQuoteButton: UIButton!
+    @IBOutlet weak var firstQuoteSymbolLbl: UILabel!
     @IBOutlet weak var secondQuoteButton: UIButton!
+    @IBOutlet weak var secondQuoteSymbolLbl: UILabel!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +61,6 @@ class ConvertViewController: UIViewController,UITextFieldDelegate{
     func setButtonImage(button: UIButton, quote: Quote) -> UIButton {
         let imageURL = URL(string: quote.logoUrl!)
         button.sd_setImage(with:imageURL, for: .normal, placeholderImage: UIImage(named: "placeholder"))
-   
         return button
     }
 
