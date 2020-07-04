@@ -41,6 +41,7 @@
 		7C538CB0246750C70075711A /* QuoteCachedProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCachedProvider.swift; sourceTree = "<group>"; };
 		7C538CB2246871680075711A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7C538CB724687CEF0075711A /* ButtonClick_Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ButtonClick_Sound.wav; sourceTree = "<group>"; };
+		7C57F1FE24B0AEF20024A82B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
 		7C710648245AB56200E94650 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		7C71064A245AB56900E94650 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		7C710657245E367F00E94650 /* QuoteProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteProvider.swift; sourceTree = "<group>"; };
@@ -109,6 +110,7 @@
 		7CEAC778244F81CA00F83FF9 /* Crypto-Converter */ = {
 			isa = PBXGroup;
 			children = (
+				7C57F1FE24B0AEF20024A82B /* README.md */,
 				7CEAC78D244F81DD00F83FF9 /* Controller */,
 				7CEAC78F244F81F700F83FF9 /* View */,
 				7CEAC78E244F81EE00F83FF9 /* Model */,
