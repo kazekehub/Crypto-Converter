@@ -1,0 +1,26 @@
+PODS:
+  - Realm (4.4.1):
+    - Realm/Headers (= 4.4.1)
+  - Realm/Headers (4.4.1)
+  - RealmSwift (4.4.1):
+    - Realm (= 4.4.1)
+  - TableViewReloadAnimation (0.0.5)
+
+DEPENDENCIES:
+  - RealmSwift
+  - TableViewReloadAnimation (~> 0.0.5)
+
+SPEC REPOS:
+  trunk:
+    - Realm
+    - RealmSwift
+    - TableViewReloadAnimation
+
+SPEC CHECKSUMS:
+  Realm: 4eb04d7487bd43c0581256f40b424eafb711deff
+  RealmSwift: 3eb8924ff7100df5928c7602f71d0fec51e7c9c5
+  TableViewReloadAnimation: f3a4c4048efbc56331be98075f26a2e533a14c16
+
+PODFILE CHECKSUM: 36d5e0a92bf57abdbbf8ece05286368d2791b9e5
+
+COCOAPODS: 1.9.1

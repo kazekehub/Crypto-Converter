@@ -1,0 +1,6 @@
+framework module Pods_Crypto_Converter {
+  umbrella header "Pods-Crypto-Converter-umbrella.h"
+
+  export *
+  module * { export * }
+}
