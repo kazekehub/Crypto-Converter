@@ -1,7 +1,7 @@
 # Crypto-Converter
 
-Application for converting cryptocurrency.<p> 
-Displays laconic tableview of cryptocurrencies.<p>
+<b>Application for converting cryptocurrency.<p> 
+<b>Displays laconic tableview of cryptocurrencies.<p>
 
 <p align="left">
 <img src="https://github.com/kazekehub/Crypto-Converter/blob/master/Screenshots/CryptoConverter.png" width="250">
