@@ -12,8 +12,8 @@ Overview
 ---------
 Used pod files:
 
-1.pod 'TableViewReloadAnimation'<p>
-2.pod 'RealmSwift'
+1. pod 'TableViewReloadAnimation'<p>
+2. pod 'RealmSwift'
 
 Used Swift Package Management: <p>
 1. JGProgressHUD <p>
