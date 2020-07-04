@@ -14,7 +14,6 @@
 		7C538CB3246871690075711A /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C538CB2246871680075711A /* Extensions.swift */; };
 		7C538CB824687CEF0075711A /* ButtonClick_Sound.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7C538CB724687CEF0075711A /* ButtonClick_Sound.wav */; };
 		7C538CBD246884F80075711A /* SwiftySound in Frameworks */ = {isa = PBXBuildFile; productRef = 7C538CBC246884F80075711A /* SwiftySound */; };
-		7C57F20124B0B1FE0024A82B /* CryptoConverter.png in Resources */ = {isa = PBXBuildFile; fileRef = 7C57F20024B0B1FD0024A82B /* CryptoConverter.png */; };
 		7C710649245AB56200E94650 /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C710648245AB56200E94650 /* Notifications.swift */; };
 		7C71064B245AB56900E94650 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C71064A245AB56900E94650 /* NotificationService.swift */; };
 		7C710651245DB99200E94650 /* SDWebImageSVGCoder in Frameworks */ = {isa = PBXBuildFile; productRef = 7C710650245DB99200E94650 /* SDWebImageSVGCoder */; };
@@ -42,8 +41,6 @@
 		7C538CB0246750C70075711A /* QuoteCachedProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuoteCachedProvider.swift; sourceTree = "<group>"; };
 		7C538CB2246871680075711A /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		7C538CB724687CEF0075711A /* ButtonClick_Sound.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ButtonClick_Sound.wav; sourceTree = "<group>"; };
-		7C57F1FE24B0AEF20024A82B /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = SOURCE_ROOT; };
-		7C57F20024B0B1FD0024A82B /* CryptoConverter.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = CryptoConverter.png; sourceTree = "<group>"; };
 		7C710648245AB56200E94650 /* Notifications.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		7C71064A245AB56900E94650 /* NotificationService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
 		7C710657245E367F00E94650 /* QuoteProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuoteProvider.swift; sourceTree = "<group>"; };
@@ -91,14 +88,6 @@
 			path = Sound;
 			sourceTree = "<group>";
 		};
-		7C57F1FF24B0B1B80024A82B /* Files for md */ = {
-			isa = PBXGroup;
-			children = (
-				7C57F20024B0B1FD0024A82B /* CryptoConverter.png */,
-			);
-			path = "Files for md";
-			sourceTree = "<group>";
-		};
 		7CEAC76D244F81CA00F83FF9 = {
 			isa = PBXGroup;
 			children = (
@@ -120,8 +109,6 @@
 		7CEAC778244F81CA00F83FF9 /* Crypto-Converter */ = {
 			isa = PBXGroup;
 			children = (
-				7C57F1FF24B0B1B80024A82B /* Files for md */,
-				7C57F1FE24B0AEF20024A82B /* README.md */,
 				7CEAC78D244F81DD00F83FF9 /* Controller */,
 				7CEAC78F244F81F700F83FF9 /* View */,
 				7CEAC78E244F81EE00F83FF9 /* Model */,
@@ -262,7 +249,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7C57F20124B0B1FE0024A82B /* CryptoConverter.png in Resources */,
 				7CEAC786244F81CD00F83FF9 /* LaunchScreen.storyboard in Resources */,
 				7CEAC783244F81CD00F83FF9 /* Assets.xcassets in Resources */,
 				7CEAC781244F81CA00F83FF9 /* Main.storyboard in Resources */,
