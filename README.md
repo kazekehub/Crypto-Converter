@@ -10,12 +10,12 @@
 
 Overview
 ---------
-Used pod files,like :
+Used pod files:
 
 1.pod 'TableViewReloadAnimation'<p>
 2.pod 'RealmSwift'
 
 Used Swift Package Management: <p>
-1.JGProgressHUD <p>
-2.SDWebImageSVGCoder <p>
-3.SwiftySound <p>
+1. JGProgressHUD <p>
+2. SDWebImageSVGCoder <p>
+3. SwiftySound <p>
